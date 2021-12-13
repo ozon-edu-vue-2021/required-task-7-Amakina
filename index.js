@@ -56,11 +56,7 @@ CustomRenderer.init({
                 })
 
                 const sortedPeople = Object.values(popularity).sort((a, b) => b.rating - a.rating)
-                const topPeople = 
-                    MAX_ELEMENTS_NUM > sortedPeople.length
-                    ? topPeople.slice(0, sortedPeople.lastIndexOf(topPeople[MAX_ELEMENTS_NUM]))
-                    : sortedPeople
-                const popularPeople = topPeople
+                const popularPeople = sortedPeople
                     .sort((a, b) => {
                         if (a.rating !== b.rating) return 0
                         if (a.person.name > b.person.name) return 1
